@@ -18,6 +18,8 @@ macOS ships with its own system Python, which should not be modified or replaced
 
 This tutorial uses `pyenv`, the safest and most flexible way to manage Python versions on macOS.
 
+If you would like the functional script that you can use directly, see the repo [install_new_python_version_in_your_os](https://github.com/GitauHarrison/install_new_python_version_in_your_os).
+
 ### Table of Contents
 
 - [Install A Different Version Of Python From The Default in macOS And Work With Virtual Environments](#install-a-different-version-of-python-from-the-default-in-macos-and-work-with-virtual-environments)
