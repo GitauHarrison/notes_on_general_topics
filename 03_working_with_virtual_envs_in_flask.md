@@ -28,6 +28,22 @@ The focus here is **environment and dependency management**, not your Flask rout
 
 ---
 
+## Table of Contents
+
+- [1. Concepts: Python version vs virtual env vs dependencies](#1-concepts-python-version-vs-virtual-env-vs-dependencies)
+- [2. Scenario A – New Flask project](#2-scenario-a--new-flask-project)
+  - [2.1 pyenv + pyenv-virtualenv + pip + requirements.txt](#21-pyenv--pyenv-virtualenv--pip--requirementstxt)
+  - [2.2 pyenv + Poetry (recommended for new projects)](#22-pyenv--poetry-recommended-for-new-projects)
+  - [2.3 Poetry without pyenv](#23-poetry-without-pyenv)
+- [3. Scenario B – Existing Flask app using requirements.txt](#3-scenario-b--existing-flask-app-using-requirementstxt)
+  - [3.1 Keep requirements.txt but use pyenv-virtualenv](#31-keep-requirementstxt-but-use-pyenv-virtualenv)
+  - [3.2 Migrate an existing app to Poetry + pyenv](#32-migrate-an-existing-app-to-poetry--pyenv)
+  - [3.3 Migrate to Poetry without pyenv](#33-migrate-to-poetry-without-pyenv)
+- [4. OS notes: macOS, Ubuntu, and Windows (WSL)](#4-os-notes-macos-ubuntu-and-windows-wsl)
+- [5. Choosing a default workflow for your Flask apps](#5-choosing-a-default-workflow-for-your-flask-apps)
+
+---
+
 ## 1. Concepts: Python version vs virtual env vs dependencies
 
 There are three separate layers you should keep straight:
