@@ -89,7 +89,7 @@ brew install pyenv
 Then, add `pyenv` to your shell. If you do not know what shell you use, you can run this command in your terminal:
 
 ```python
-echo $SHEL
+echo $SHELL
 ```
 
 Knowing what shell you have will allow you to update the PATH, ensuring `pyenv`'s Python versions take priority. By default, macOS uses `zsh`.
@@ -137,7 +137,7 @@ exec $SHELL
 ```
 
 ## Install the latest Python version
-Optionally, before you install any, you can list available version by running:
+Optionally, before you install any, you can list available versions by running:
 
 ```python
 pyenv install -l | grep -E "^[ ]*3\.[0-9]+\.[0-9]+$" | tail
@@ -154,9 +154,9 @@ pyenv install 3.14.2
 It will download from source, compile it using system tools and intall it under `~/.pyenv/versions/`.
 
 ### Add scope
-A great feature of `pyenv` is not only its ability to manage version of Python but also the freedom it provides you to determine what scope the download version will run under. For example, use:
+A great feature of `pyenv` is not only its ability to manage version of Python but also the freedom it provides you to determine what scope the downloaded version will run under. For example, use:
 
-- `pyenv global <version>` for all shells
+- `pyenv global <version>` for all global environments
 - `pyenv local <version>` per-project folder
 - `pyenv shell <version>` for the current shell session
 
