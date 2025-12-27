@@ -273,7 +273,7 @@ What each of these means:
 - **Version** – the current version of your app (`0.1.0` is a good starting point). If you follow semantic versioning:
   - `MAJOR.MINOR.PATCH`, e.g. `1.2.3`.
 - **Description** – a short human-readable summary; helps future you and teammates.
-- **Author** – name/email; for BLC projects, you can use a team address like `Bolder Learner Consulting <support@bolderlearner.com>`.
+- **Author** – name/email; for BLC projects, you can use a team address like `GitauHarrion <email@admin.com>`.
 - **License** – free text. If you have a **custom/proprietary license**, type something like `Proprietary (BLC)`. The full legal text still lives in `LICENCE`.
 - **Compatible Python versions** – a constraint like `>=3.11,<4.0` tells Poetry which Python versions this project supports. This is important for collaborators and CI.
 - **Interactive dependencies** – for an existing or more complex app, it’s usually easier to answer `no` here and add dependencies later with `poetry add` (or import from `requirements.txt`).
@@ -362,6 +362,28 @@ poetry run flask run
 
 If later you decide to adopt pyenv, you can **first** set `pyenv local ...` in the project directory, then re-run `poetry env use python3` to make Poetry’s env use that interpreter.
 
+#### 2.3.3 Making Flask commands easier to type with an alias
+
+If you find yourself typing `poetry run flask ...` a lot, you can simplify this with a shell alias or function.
+
+For example, in `zsh` or `bash`, add this to `~/.zshrc` or `~/.bashrc`:
+
+```bash path=null start=null
+alias pf="poetry run flask"
+```
+
+Then reload your shell (`exec "$SHELL" -l` or open a new terminal). From that point on, inside your Flask project you can run:
+
+```bash path=null start=null
+pf run                # instead of: poetry run flask run
+pf db init            # instead of: poetry run flask db init
+pf db migrate -m "msg"
+pf db upgrade
+pf shell
+```
+
+This is purely a convenience on top of Poetry: under the hood, every `pf ...` command is still using the correct Poetry-managed virtual environment. It’s a handy pattern when you’re migrating from a plain `flask` workflow to a Poetry-based one.
+
 ---
 
 ## 3. Scenario B – Existing Flask app using `requirements.txt`
@@ -416,7 +438,7 @@ This is a minimal change that improves Python version control without changing h
 
 ### 3.2 Migrate an existing app to Poetry + pyenv
 
-This is the pattern you’re adopting in your BLC Flask apps.
+This is the pattern you’re adopting in your Flask apps.
 
 1. **Ensure the app currently works** (same as step 1 above).
 
